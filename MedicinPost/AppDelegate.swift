@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import Firebase
+import Parse
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        let parseConfig = ParseClientConfiguration {
+            $0.applicationId = "TKPN7Gdg11JYVDj6oAACtPaxPTQMUJLSNtoX54qq"
+            $0.clientKey = "eoX7DwuaWN9uiuQhm9IT6HUNEvomCNdKwQV0rvFn"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: parseConfig)
+        
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+          }
+        }
+        
         return true
     }
 
