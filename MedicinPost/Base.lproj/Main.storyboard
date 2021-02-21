@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0L-k5-dEi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ALW-on-3Fl">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1227,7 +1227,7 @@ okunabilir olmalıdır.)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecQ-CF-P0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4474" y="122"/>
+            <point key="canvasLocation" x="4570" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hHH-Mt-RB3">
@@ -1346,15 +1346,58 @@ okunabilir olmalıdır.)
                     <navigationItem key="navigationItem" id="K1L-JI-6Ma"/>
                     <connections>
                         <outlet property="table" destination="bfI-2q-nYo" id="hhQ-Dv-48z"/>
+                        <segue destination="WUB-Rr-Ygk" kind="presentation" identifier="segue_notification_details" id="vhu-lt-L92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="og5-aW-05P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.8000000000002" y="-622.03898050974522"/>
+            <point key="canvasLocation" x="2970" y="-622"/>
+        </scene>
+        <!--Notification Details View Controller-->
+        <scene sceneID="h1Y-cG-NIf">
+            <objects>
+                <viewController id="WUB-Rr-Ygk" customClass="NotificationDetailsViewController" customModule="MedicinPost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d3v-t9-hct">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLD-vv-riw">
+                                <rect key="frame" x="10" y="20" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtp-fc-O6h">
+                                <rect key="frame" x="10" y="47" width="355" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Rtp-fc-O6h" firstAttribute="top" secondItem="kLD-vv-riw" secondAttribute="bottom" constant="10" id="IrC-aC-qU2"/>
+                            <constraint firstItem="kLD-vv-riw" firstAttribute="top" secondItem="yY6-4g-ZyY" secondAttribute="top" constant="20" id="KMK-tH-0sH"/>
+                            <constraint firstItem="kLD-vv-riw" firstAttribute="leading" secondItem="yY6-4g-ZyY" secondAttribute="leading" constant="10" id="aLH-pv-VzN"/>
+                            <constraint firstItem="Rtp-fc-O6h" firstAttribute="leading" secondItem="yY6-4g-ZyY" secondAttribute="leading" constant="10" id="dAC-Ij-Wfa"/>
+                            <constraint firstItem="yY6-4g-ZyY" firstAttribute="trailing" secondItem="kLD-vv-riw" secondAttribute="trailing" constant="10" id="qip-v1-JEG"/>
+                            <constraint firstItem="yY6-4g-ZyY" firstAttribute="trailing" secondItem="Rtp-fc-O6h" secondAttribute="trailing" constant="10" id="rNr-DY-WAv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yY6-4g-ZyY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ll_desc" destination="Rtp-fc-O6h" id="gjU-5G-rG2"/>
+                        <outlet property="ll_title" destination="kLD-vv-riw" id="oOs-3v-zvG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="496-VF-cvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3741.5999999999999" y="-622.03898050974522"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sr9-Uo-tR1"/>
+        <segue reference="MH5-6i-b4Q"/>
+        <segue reference="H7B-s9-EaE"/>
         <segue reference="GD3-oK-ZWY"/>
     </inferredMetricsTieBreakers>
     <resources>

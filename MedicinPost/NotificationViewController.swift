@@ -24,16 +24,39 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_notification") as! NotificationTableViewCell
         
         if indexPath.row < notifications.count{
-                   
-                   let obj = notifications[indexPath.row]
-                   let title = obj["Title"] as? String
-                   cell.title.text = title
-                   
-                 
-               }
+            
+            let obj = notifications[indexPath.row]
+            let title = obj["Title"] as? String
+            let desc = obj["Desc"] as? String
+            
+            cell.title.text = title
+            cell.desc.text = desc
+            
+        }
         
         
         return cell
+    }
+    
+    var selectedNotification: PFObject?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedNotification = self.notifications[indexPath.row]
+        
+        self.performSegue(withIdentifier: "segue_notification_details", sender: nil)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segue_notification_details" {
+            
+            let destinationVC = segue.destination as! NotificationDetailsViewController
+            destinationVC.notification = self.selectedNotification
+        }
+        
     }
     
     
@@ -51,6 +74,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     func retrieveNotifications(){
         
         self.showLoadingDialog()
+        self.notifications = [PFObject]()
         
         let user = PFUser.current()
         let query = PFQuery(className: "Notifications")
@@ -84,58 +108,76 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-     let hud = JGProgressHUD()
-     
-     func showLoadingDialog(){
+    let hud = JGProgressHUD()
     
-         hud.textLabel.text = ""
-         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-         hud.show(in: self.view)
-         
-     }
-     
-     
-     func dismissLoadingDialog(){
-         
-         hud.dismiss()
-         
-     }
-     
-     func showSuccessDialog(){
-         
-         hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-         hud.show(in: self.view)
-         hud.textLabel.text = "Kaydedildi"
-         hud.dismiss(afterDelay: 1.0)
-
-
-     }
+    func showLoadingDialog(){
+        
+        hud.textLabel.text = ""
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.show(in: self.view)
+        
+    }
+    
+    
+    func dismissLoadingDialog(){
+        
+        hud.dismiss()
+        
+    }
+    
+    func showSuccessDialog(){
+        
+        hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        hud.show(in: self.view)
+        hud.textLabel.text = "Başarılı"
+        hud.dismiss(afterDelay: 1.0)
+        
+        
+    }
     
     func tableView(_ tableView: UITableView,
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
         let closeAction = UIContextualAction(style: .normal, title:  "Close", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("OK, marked as Closed")
-                success(true)
-            })
-            closeAction.image = UIImage(named: "tick")
-            closeAction.backgroundColor = .purple
-    
-            return UISwipeActionsConfiguration(actions: [closeAction])
-    
+            print("OK, marked as Closed")
+            success(true)
+        })
+        closeAction.image = UIImage(named: "tick")
+        closeAction.backgroundColor = .purple
+        
+        return UISwipeActionsConfiguration(actions: [closeAction])
+        
     }
     
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
-        let modifyAction = UIContextualAction(style: .normal, title:  "Update", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("Update action ...")
+        let modifyAction = UIContextualAction(style: .normal, title:  "Temizle", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            self.deleteNotification(ntf: self.notifications[indexPath.row])
             success(true)
         })
         modifyAction.image = UIImage(named: "hammer")
-        modifyAction.backgroundColor = .blue
-    
+        modifyAction.backgroundColor = .gray
+        
         return UISwipeActionsConfiguration(actions: [modifyAction])
+    }
+    
+    
+    func deleteNotification(ntf: PFObject){
+        
+        self.showLoadingDialog()
+        
+        ntf.deleteInBackground { (result: Bool, error: Error?) in
+            
+            if result {
+                self.showSuccessDialog()
+                self.retrieveNotifications()
+            }else{
+                self.dismissLoadingDialog()
+            }
+            
+        }
+        
     }
     
     
