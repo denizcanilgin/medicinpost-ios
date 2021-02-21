@@ -21,6 +21,8 @@
 		EBB6C18E259A815400DFC5D8 /* Intro3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6C18D259A815400DFC5D8 /* Intro3ViewController.swift */; };
 		EBB6C190259A815D00DFC5D8 /* Intro4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6C18F259A815D00DFC5D8 /* Intro4ViewController.swift */; };
 		EBC1603625E1AE59009580F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBC1603525E1AE59009580F5 /* GoogleService-Info.plist */; };
+		EBC1603825E1DEE4009580F5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1603725E1DEE4009580F5 /* NotificationViewController.swift */; };
+		EBC1603A25E1E202009580F5 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1603925E1E202009580F5 /* NotificationTableViewCell.swift */; };
 		EBC49778259F88ED0057CAFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC49777259F88ED0057CAFC /* ProfileViewController.swift */; };
 		EBCBCE50258033D400B3AC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBCE4F258033D400B3AC07 /* AppDelegate.swift */; };
 		EBCBCE52258033D400B3AC07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBCE51258033D400B3AC07 /* SceneDelegate.swift */; };
@@ -71,6 +73,8 @@
 		EBB6C18D259A815400DFC5D8 /* Intro3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro3ViewController.swift; sourceTree = "<group>"; };
 		EBB6C18F259A815D00DFC5D8 /* Intro4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro4ViewController.swift; sourceTree = "<group>"; };
 		EBC1603525E1AE59009580F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBC1603725E1DEE4009580F5 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EBC1603925E1E202009580F5 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		EBC49777259F88ED0057CAFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBCBCE4C258033D400B3AC07 /* MedicinPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCBCE4F258033D400B3AC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				EBB6C186259A6CC800DFC5D8 /* OrderCompletedViewController.swift */,
 				EBCBCE4F258033D400B3AC07 /* AppDelegate.swift */,
 				EBCBCE51258033D400B3AC07 /* SceneDelegate.swift */,
+				EBC1603725E1DEE4009580F5 /* NotificationViewController.swift */,
 				EBCBCE53258033D400B3AC07 /* ViewController.swift */,
 				EBCBCE55258033D400B3AC07 /* Main.storyboard */,
 				EBCBCE58258033D600B3AC07 /* Assets.xcassets */,
@@ -190,6 +195,7 @@
 				EBA23F99259026020045A5A8 /* PharmListViewController.swift */,
 				EBB6C182259A1F3800DFC5D8 /* OrderViewController.swift */,
 				EBA23F9D25902FF50045A5A8 /* PharmacyTableViewCell.swift */,
+				EBC1603925E1E202009580F5 /* NotificationTableViewCell.swift */,
 				EBB6C184259A48BF00DFC5D8 /* ConfirmOrderViewController.swift */,
 				EBC49777259F88ED0057CAFC /* ProfileViewController.swift */,
 			);
@@ -458,7 +464,9 @@
 				EBB6C187259A6CC800DFC5D8 /* OrderCompletedViewController.swift in Sources */,
 				EBB6C189259A7A1A00DFC5D8 /* Intro1ViewController.swift in Sources */,
 				EBB6C185259A48BF00DFC5D8 /* ConfirmOrderViewController.swift in Sources */,
+				EBC1603A25E1E202009580F5 /* NotificationTableViewCell.swift in Sources */,
 				EBC49778259F88ED0057CAFC /* ProfileViewController.swift in Sources */,
+				EBC1603825E1DEE4009580F5 /* NotificationViewController.swift in Sources */,
 				EBA23F982590249D0045A5A8 /* EnterVerCodeViewController.swift in Sources */,
 				EBCBCE54258033D400B3AC07 /* ViewController.swift in Sources */,
 				EBCBCE50258033D400B3AC07 /* AppDelegate.swift in Sources */,

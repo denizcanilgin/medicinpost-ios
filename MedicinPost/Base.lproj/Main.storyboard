@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7k-On-2hK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0L-k5-dEi">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -372,7 +372,7 @@ uygun insanlar bulabileceğini görebilir, oraları ziyaret edebilir ve onlarla 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fmu-Ls-w7C">
-                                <rect key="frame" x="20" y="96" width="335" height="546"/>
+                                <rect key="frame" x="20" y="106" width="335" height="536"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_pharma" rowHeight="120" id="raC-vR-Dc1" customClass="PharmacyTableViewCell" customModule="MedicinPost" customModuleProvider="target">
@@ -463,7 +463,7 @@ uygun insanlar bulabileceğini görebilir, oraları ziyaret edebilir ve onlarla 
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sipariş vermek için bir eczane seçin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-CK-zFu">
-                                <rect key="frame" x="54" y="50" width="267" height="21"/>
+                                <rect key="frame" x="54" y="60" width="267" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -487,17 +487,43 @@ uygun insanlar bulabileceğini görebilir, oraları ziyaret edebilir ve onlarla 
                                     <action selector="sendVerCodeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="moq-Se-otw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x80-Aj-O28">
+                                <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="N4f-Ha-VTd"/>
+                                    <constraint firstAttribute="height" constant="24" id="bGw-7X-FDL"/>
+                                </constraints>
+                                <state key="normal" image="personicon"/>
+                                <connections>
+                                    <action selector="buttonProfileAction:" destination="v7k-On-2hK" eventType="touchUpInside" id="DUK-VR-2NM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3N-VJ-HLc">
+                                <rect key="frame" x="331" y="10" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Fp3-tt-Xi7"/>
+                                    <constraint firstAttribute="width" constant="24" id="JIN-Nl-sA8"/>
+                                </constraints>
+                                <state key="normal" image="noticon"/>
+                                <connections>
+                                    <action selector="buttonNotifications:" destination="v7k-On-2hK" eventType="touchUpInside" id="67U-Lp-5oc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Fmu-Ls-w7C" firstAttribute="leading" secondItem="zHD-K8-DJK" secondAttribute="leading" constant="20" id="0cI-Fp-eIY"/>
+                            <constraint firstItem="x80-Aj-O28" firstAttribute="leading" secondItem="zHD-K8-DJK" secondAttribute="leading" constant="20" id="2Ff-NG-3lH"/>
                             <constraint firstItem="Fmu-Ls-w7C" firstAttribute="leading" secondItem="zHD-K8-DJK" secondAttribute="leading" id="6Hi-Lc-Jch"/>
                             <constraint firstItem="Fmu-Ls-w7C" firstAttribute="top" secondItem="Eeh-CK-zFu" secondAttribute="bottom" constant="25" id="7VL-8z-WL0"/>
                             <constraint firstItem="zHD-K8-DJK" firstAttribute="trailing" secondItem="Fmu-Ls-w7C" secondAttribute="trailing" id="7mN-4O-pIh"/>
+                            <constraint firstItem="zHD-K8-DJK" firstAttribute="trailing" secondItem="e3N-VJ-HLc" secondAttribute="trailing" constant="20" id="Jye-w1-NaO"/>
+                            <constraint firstItem="e3N-VJ-HLc" firstAttribute="top" secondItem="zHD-K8-DJK" secondAttribute="top" constant="10" id="XJ7-jc-vDu"/>
                             <constraint firstItem="zHD-K8-DJK" firstAttribute="trailing" secondItem="Fmu-Ls-w7C" secondAttribute="trailing" constant="20" id="e4e-XP-h2Q"/>
                             <constraint firstItem="Qra-2l-zVm" firstAttribute="bottom" secondItem="zHD-K8-DJK" secondAttribute="bottom" constant="-10" id="elH-un-jKQ"/>
                             <constraint firstItem="zHD-K8-DJK" firstAttribute="trailing" secondItem="Qra-2l-zVm" secondAttribute="trailing" constant="20" id="ey7-OP-Plt"/>
-                            <constraint firstItem="Eeh-CK-zFu" firstAttribute="top" secondItem="zHD-K8-DJK" secondAttribute="top" constant="50" id="uZE-J8-uSU"/>
+                            <constraint firstItem="x80-Aj-O28" firstAttribute="top" secondItem="zHD-K8-DJK" secondAttribute="top" constant="10" id="lXn-W5-qkJ"/>
+                            <constraint firstItem="Eeh-CK-zFu" firstAttribute="top" secondItem="zHD-K8-DJK" secondAttribute="top" constant="60" id="uZE-J8-uSU"/>
                             <constraint firstAttribute="bottom" secondItem="Fmu-Ls-w7C" secondAttribute="bottom" constant="25" id="veX-I1-2fn"/>
                             <constraint firstItem="Eeh-CK-zFu" firstAttribute="centerX" secondItem="Ipd-lM-HPu" secondAttribute="centerX" id="zXo-18-4Tk"/>
                         </constraints>
@@ -509,6 +535,7 @@ uygun insanlar bulabileceğini görebilir, oraları ziyaret edebilir ve onlarla 
                         <outlet property="table" destination="Fmu-Ls-w7C" id="Otz-xE-8jH"/>
                         <segue destination="Ifm-cj-1M6" kind="show" identifier="segue_order" id="MH5-6i-b4Q"/>
                         <segue destination="wee-eG-HQS" kind="show" identifier="segue_fillprofile" id="CCo-c3-U9h"/>
+                        <segue destination="f31-zL-KWE" kind="show" identifier="segue_notifications" id="tge-Ea-jPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G6-9k-DuS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1135,7 +1162,7 @@ okunabilir olmalıdır.)
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVl-kA-O39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3740.579710144928" y="888.61607142857144"/>
+            <point key="canvasLocation" x="2970" y="845"/>
         </scene>
         <!--Order Completed View Controller-->
         <scene sceneID="2ko-aF-nnA">
@@ -1262,8 +1289,70 @@ okunabilir olmalıdır.)
             </objects>
             <point key="canvasLocation" x="2066" y="845"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="aG2-xb-bZ4">
+            <objects>
+                <viewController id="f31-zL-KWE" customClass="NotificationViewController" customModule="MedicinPost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rf3-lJ-Bbx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-2q-nYo">
+                                <rect key="frame" x="16" y="20" width="343" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_notification" rowHeight="106" id="Okl-9k-Ps5" customClass="NotificationTableViewCell" customModule="MedicinPost" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Okl-9k-Ps5" id="NgZ-JD-5Un" customClass="NotificationTableViewCell" customModule="MedicinPost" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-zA-aee">
+                                                    <rect key="frame" x="15" y="36" width="313" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKg-ym-cru">
+                                                    <rect key="frame" x="15" y="11" width="313" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="ueA-zA-aee" id="ash-5Y-Qhm"/>
+                                            <outlet property="title" destination="HKg-ym-cru" id="xK7-g8-Czq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bfI-2q-nYo" firstAttribute="leading" secondItem="Tpn-kF-Xs5" secondAttribute="leading" constant="16" id="CFH-LO-Dk7"/>
+                            <constraint firstItem="Tpn-kF-Xs5" firstAttribute="trailing" secondItem="bfI-2q-nYo" secondAttribute="trailing" constant="16" id="L7k-9O-5tR"/>
+                            <constraint firstItem="bfI-2q-nYo" firstAttribute="top" secondItem="Tpn-kF-Xs5" secondAttribute="top" constant="20" id="Oxr-ap-BNp"/>
+                            <constraint firstItem="Tpn-kF-Xs5" firstAttribute="bottom" secondItem="bfI-2q-nYo" secondAttribute="bottom" constant="20" id="tIj-A1-slE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tpn-kF-Xs5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K1L-JI-6Ma"/>
+                    <connections>
+                        <outlet property="table" destination="bfI-2q-nYo" id="hhQ-Dv-48z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="og5-aW-05P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2968.8000000000002" y="-622.03898050974522"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CCo-c3-U9h"/>
         <segue reference="Sr9-Uo-tR1"/>
         <segue reference="GD3-oK-ZWY"/>
     </inferredMetricsTieBreakers>
@@ -1273,6 +1362,8 @@ okunabilir olmalıdır.)
         <image name="intro2" width="375" height="521.5"/>
         <image name="intro3" width="375" height="812"/>
         <image name="nextbutton" width="94" height="94"/>
+        <image name="noticon" width="36" height="36"/>
+        <image name="personicon" width="36" height="36"/>
         <image name="pharmlogo" width="91" height="84"/>
         <image name="plusicon-1" width="512" height="512"/>
         <image name="thick" width="411" height="411"/>
