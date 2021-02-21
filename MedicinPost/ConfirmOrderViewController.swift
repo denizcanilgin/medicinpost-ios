@@ -8,10 +8,13 @@
 
 import UIKit
 import Parse
+import JGProgressHUD
 
 class ConfirmOrderViewController: ViewController {
     
-
+    
+    @IBOutlet weak var ll_address: UILabel!
+    @IBOutlet weak var ll_contactPerson: UILabel!
     @IBOutlet weak var ll_phoneNumber: UILabel!
     @IBOutlet weak var iv_orderImage: UIImageView!
     @IBOutlet weak var ll_note: UILabel!
@@ -19,10 +22,10 @@ class ConfirmOrderViewController: ViewController {
     var selectedPharm:PFObject?
     var orderImage:PFFileObject?
     var indicator: UIActivityIndicatorView!
-
-    @IBAction func buttonConfirm(_ sender: Any) {
     
-      uploadOrder()
+    @IBAction func buttonConfirm(_ sender: Any) {
+        
+        uploadOrder()
         
     }
     
@@ -31,20 +34,24 @@ class ConfirmOrderViewController: ViewController {
         super.viewDidLoad()
         initLoading()
         
-        ll_note.text = "  " + orderNote!
-        
+        if orderNote != nil && ll_note != nil{
+            ll_note.text = "  " + orderNote!
+        }
         if PFUser.current() != nil {
             
             if PFUser.current()!["PhoneNumber"] != nil {
                 
                 ll_phoneNumber.text = PFUser.current()!["PhoneNumber"] as? String
                 
+                
+                
+                
             }
             
         }
         
-
-       
+        
+        
         self.orderImage?.getDataInBackground { (imageData: Data?, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
@@ -54,6 +61,7 @@ class ConfirmOrderViewController: ViewController {
             }
         }
         
+        self.retrieveUserProfile()
         
     }
     
@@ -91,9 +99,9 @@ class ConfirmOrderViewController: ViewController {
     func showAlertDialog(title:String,msg:String){
         
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "Anladım", style: .default, handler: nil))
-
+        
         self.present(alert, animated: true)
         
     }
@@ -108,6 +116,94 @@ class ConfirmOrderViewController: ViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
     }
-
-
+    
+    
+    var user = PFObject(className: "nil")
+    
+    func retrieveUserProfile(){
+        
+        self.showLoadingDialog()
+        
+        let retrievedCurrentUser = PFUser.current()
+        let phoneNumber = retrievedCurrentUser?.username
+        let query : PFQuery = PFUser.query()!
+        
+        print("beforeQuery: " + phoneNumber!)
+        
+        query.whereKey("username", equalTo: phoneNumber!)
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            
+            self.dismissLoadingDialog()
+            
+            if objects != nil {
+                
+                if objects!.count > 0 {
+                    
+                    self.user = objects![0]
+                    self.fillUserBasedOrderDetails(user: self.user)
+                    
+                }else{
+                    
+                    print("error" + " item count is zero ")
+                    
+                }
+                
+            }else{
+                
+                print("error" + error!.localizedDescription as String)
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    let hud = JGProgressHUD()
+    
+    
+    func fillUserBasedOrderDetails(user:PFObject){
+        
+        let first_name = self.user["first_name"] as? String
+        let last_name = self.user["last_name"] as? String
+        let phone_number = self.user["phone"] as? String
+        let username = self.user["username"] as? String
+        let object_id = self.user.objectId
+        let address = self.user["address"] as? String
+        let email = self.user["email"] as? String
+        
+        let full_name = first_name! + last_name!
+        
+        self.ll_address.text = "  " + address!
+        self.ll_contactPerson.text = "  " +  full_name
+        self.ll_phoneNumber.text = "  " +  phone_number!
+        
+    }
+    
+    func showLoadingDialog(){
+        
+        hud.textLabel.text = ""
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.show(in: self.view)
+        
+    }
+    
+    
+    func dismissLoadingDialog(){
+        
+        hud.dismiss()
+        
+    }
+    
+    func showSuccessDialog(){
+        
+        hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        hud.show(in: self.view)
+        hud.textLabel.text = "Kaydedildi"
+        hud.dismiss(afterDelay: 1.0)
+        
+        
+    }
+    
+    
 }

@@ -119,8 +119,6 @@ class PharmListViewController: UIViewController, UITableViewDelegate, UITableVie
             
         }
         
-        
-        
     }
     
     override func viewDidLoad() {

@@ -742,7 +742,7 @@ okunabilir olmalıdır.)
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Lorem Ipsum Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-TK-j2y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-TK-j2y">
                                         <rect key="frame" x="8" y="42" width="319" height="96"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
@@ -770,7 +770,7 @@ okunabilir olmalıdır.)
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-tU-kFF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-tU-kFF">
                                         <rect key="frame" x="8" y="180.5" width="319" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
@@ -792,7 +792,7 @@ okunabilir olmalıdır.)
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L25-Sd-8sG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L25-Sd-8sG">
                                         <rect key="frame" x="8" y="252.5" width="319" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
@@ -812,16 +812,6 @@ okunabilir olmalıdır.)
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3M-fk-IHS">
-                                        <rect key="frame" x="8" y="324.5" width="319" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="bgl-wd-z4M"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijW-8W-mOs">
@@ -845,9 +835,20 @@ okunabilir olmalıdır.)
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-aR-jg7">
+                                        <rect key="frame" x="8" y="325" width="319" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8Fx-Rj-4cK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="eHS-aR-jg7" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="15U-Kl-qlb"/>
                                     <constraint firstItem="QnM-KR-SFP" firstAttribute="top" secondItem="fcI-TK-j2y" secondAttribute="bottom" constant="15" id="2z8-ej-Brl"/>
                                     <constraint firstAttribute="trailing" secondItem="L25-Sd-8sG" secondAttribute="trailing" constant="8" id="3yu-Xe-S1J"/>
                                     <constraint firstItem="41Y-q8-7Yg" firstAttribute="top" secondItem="L25-Sd-8sG" secondAttribute="bottom" constant="15" id="5QB-kS-JGS"/>
@@ -859,7 +860,7 @@ okunabilir olmalıdır.)
                                     <constraint firstItem="vWN-iY-kYZ" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="I5s-HX-qsI"/>
                                     <constraint firstItem="SPQ-tU-kFF" firstAttribute="top" secondItem="QnM-KR-SFP" secondAttribute="bottom" constant="7.5" id="ItR-Dh-pa6"/>
                                     <constraint firstItem="fjf-sZ-I5L" firstAttribute="top" secondItem="ijW-8W-mOs" secondAttribute="bottom" constant="7.5" id="KPI-ce-OxB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q3M-fk-IHS" secondAttribute="trailing" constant="8" id="Kxv-22-BQX"/>
+                                    <constraint firstAttribute="trailing" secondItem="eHS-aR-jg7" secondAttribute="trailing" constant="8" id="KVp-lK-rvL"/>
                                     <constraint firstItem="SPQ-tU-kFF" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="Qy7-JI-S6O"/>
                                     <constraint firstItem="XKw-t5-AMl" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="RiW-r8-XEb"/>
                                     <constraint firstItem="QnM-KR-SFP" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="Sdg-un-EgM"/>
@@ -867,12 +868,11 @@ okunabilir olmalıdır.)
                                     <constraint firstItem="fjf-sZ-I5L" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="Xmk-Vm-cAq"/>
                                     <constraint firstAttribute="trailing" secondItem="fcI-TK-j2y" secondAttribute="trailing" constant="8" id="YZi-R1-kBa"/>
                                     <constraint firstItem="fcI-TK-j2y" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="Yk7-HJ-0LX"/>
-                                    <constraint firstItem="Q3M-fk-IHS" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="Z37-s4-5WY"/>
-                                    <constraint firstItem="ijW-8W-mOs" firstAttribute="top" secondItem="Q3M-fk-IHS" secondAttribute="bottom" constant="15" id="aSZ-Uj-qmC"/>
                                     <constraint firstItem="ijW-8W-mOs" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="ak0-8z-oG3"/>
                                     <constraint firstAttribute="bottom" secondItem="fjf-sZ-I5L" secondAttribute="bottom" constant="8" id="b68-6O-fsV"/>
                                     <constraint firstItem="XKw-t5-AMl" firstAttribute="top" secondItem="p4Y-dj-Amz" secondAttribute="top" constant="15" id="cLf-Da-6Vd"/>
-                                    <constraint firstItem="Q3M-fk-IHS" firstAttribute="top" secondItem="41Y-q8-7Yg" secondAttribute="bottom" constant="7.5" id="nX8-sA-jtT"/>
+                                    <constraint firstItem="eHS-aR-jg7" firstAttribute="top" secondItem="41Y-q8-7Yg" secondAttribute="bottom" constant="8" id="ceg-ot-HlQ"/>
+                                    <constraint firstItem="ijW-8W-mOs" firstAttribute="top" secondItem="eHS-aR-jg7" secondAttribute="bottom" constant="14.5" id="cyh-zF-y1Z"/>
                                     <constraint firstItem="41Y-q8-7Yg" firstAttribute="leading" secondItem="p4Y-dj-Amz" secondAttribute="leading" constant="8" id="wND-1a-9Rx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -921,7 +921,9 @@ okunabilir olmalıdır.)
                     <navigationItem key="navigationItem" id="fe6-ei-jAr"/>
                     <connections>
                         <outlet property="iv_orderImage" destination="fjf-sZ-I5L" id="Cgc-MY-SqV"/>
-                        <outlet property="ll_note" destination="Q3M-fk-IHS" id="ss8-29-lVC"/>
+                        <outlet property="ll_address" destination="fcI-TK-j2y" id="F6w-iM-NH3"/>
+                        <outlet property="ll_contactPerson" destination="SPQ-tU-kFF" id="MZl-am-tx5"/>
+                        <outlet property="ll_note" destination="eHS-aR-jg7" id="ZUz-ig-UFj"/>
                         <outlet property="ll_phoneNumber" destination="L25-Sd-8sG" id="D6w-GK-DwX"/>
                         <segue destination="QDN-kA-7dE" kind="show" identifier="segue_ordercompleted" id="Geu-FG-fWV"/>
                     </connections>
@@ -1352,7 +1354,6 @@ okunabilir olmalıdır.)
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CCo-c3-U9h"/>
         <segue reference="Sr9-Uo-tR1"/>
         <segue reference="GD3-oK-ZWY"/>
     </inferredMetricsTieBreakers>
